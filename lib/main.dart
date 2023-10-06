@@ -6,6 +6,9 @@ import 'package:meal_app/screens/filters_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
 
+
+
+
 void main(List<String> args) {
   runApp(MyApp());
 }
@@ -78,10 +81,14 @@ class _MyAppState extends State<MyApp> {
                 fontSize: 20,
                 fontWeight: FontWeight.bold)),
         colorScheme: ColorScheme.fromSwatch(
+          //changed colors
           primarySwatch: Colors.blueGrey,
-          accentColor: Color.fromARGB(255, 234, 184, 195),
+          accentColor: Colors.white,
         ),
-        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        
+       //Sara changed Categories background color
+
+        canvasColor: Colors.white,
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyLarge: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
               bodyMedium: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),

@@ -4,56 +4,62 @@ import './models/category.dart';
 import 'models/meal.dart';
 
 const dummyCategories = [
+  //Josie edited names & colors 
+
   Category(
     id: 'c1',
-    title: 'Italian',
-    color: Colors.purple,
+    title: '\t\t\t\tUser Buttons', 
+    color: Color.fromARGB(255, 248, 117, 1),
   ),
   Category(
     id: 'c2',
-    title: 'Quick & Easy',
-    color: Colors.red,
+    title: '\t\t\tVideo Tutorials',
+    color: Color.fromARGB(255, 248, 117, 1),
   ),
   Category(
     id: 'c3',
-    title: 'Hamburgers',
-    color: Colors.orange,
+    title: '\t\t\t\t\t\t\t\t\t\tFAQs',
+    color: Color.fromARGB(255, 248, 117, 1),
   ),
   Category(
     id: 'c4',
-    title: 'German',
-    color: Colors.amber,
+    title: '\tEmergency Stop',
+    color: Color.fromARGB(255, 248, 117, 1),
   ),
-  Category(
-    id: 'c5',
-    title: 'Light & Lovely',
-    color: Colors.blue,
-  ),
-  Category(
-    id: 'c6',
-    title: 'Exotic',
-    color: Colors.green,
-  ),
-  Category(
-    id: 'c7',
-    title: 'Breakfast',
-    color: Colors.lightBlue,
-  ),
-  Category(
-    id: 'c8',
-    title: 'Asian',
-    color: Colors.lightGreen,
-  ),
-  Category(
-    id: 'c9',
-    title: 'French',
-    color: Colors.pink,
-  ),
-  Category(
-    id: 'c10',
-    title: 'Summer',
-    color: Colors.teal,
-  ),
+  
+  //Sara commented these extra buttons out, just in case we might 
+  //need to use them later
+
+  // Category(
+  //   id: 'c5',
+  //   title: 'Light & Lovely',
+  //   color: Colors.blue,
+  // ),
+  // Category(
+  //   id: 'c6',
+  //   title: 'Exotic',
+  //   color: Colors.green,
+  // ),
+  // Category(
+  //   id: 'c7',
+  //   title: 'Breakfast',
+  //   color: Colors.lightBlue,
+  // ),
+  // Category(
+  //   id: 'c8',
+  //   title: 'Asian',
+  //   color: Colors.lightGreen,
+  // ),
+  // Category(
+  //   id: 'c9',
+  //   title: 'French',
+  //   color: Colors.pink,
+  // ),
+  // Category(
+  //   id: 'c10',
+  //   title: 'Summer',
+  //   color: Colors.teal,
+  // ),
 ];
 
 const DUMMY_MEALS = [
@@ -119,13 +125,16 @@ const DUMMY_MEALS = [
     isVegetarian: false,
     isLactoseFree: false,
   ),
+
+  //FAQ's Screen 
+  //Sara & Josie edited this page 
   Meal(
     id: 'm3',
     categories: [
       'c2',
       'c3',
     ],
-    title: 'Classic Hamburger',
+    title: 'Test',
     affordability: Affordability.pricey,
     complexity: Complexity.simple,
     imageUrl:
