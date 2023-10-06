@@ -38,8 +38,8 @@ class CategoryItem extends StatelessWidget {
               //created this container to include images inside our buttons
               child: Image.asset(
                 image, // Replace with your image path
-                width: 100, // Adjust the width as needed
-                height: 100, // Adjust the height as needed
+                width: 75, // Adjust the width as needed
+                height: 75, // Adjust the height as needed
                 fit: BoxFit.contain, // Adjust the fit as needed
               ),
             )

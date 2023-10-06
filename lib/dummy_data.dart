@@ -9,25 +9,25 @@ const dummyCategories = [
 
   Category(
     id: 'c1',
-    title: '\t\t\t\tUser Buttons', 
+    title: 'User Buttons', 
     color: Color.fromARGB(255, 248, 117, 1),
     image: 'assets/images/arm.png',
   ),
   Category(
     id: 'c2',
-    title: '\t\t\tVideo Tutorials',
+    title: 'Video Tutorials',
     color: Color.fromARGB(255, 248, 117, 1),
     image: 'assets/images/video.png',
   ),
   Category(
     id: 'c3',
-    title: '\t\t\t\t\t\t\t\t\t\tFAQs',
+    title: 'FAQs',
     color: Color.fromARGB(255, 248, 117, 1),
     image: 'assets/images/faq.png',
   ),
   Category(
     id: 'c4',
-    title: '\tEmergency Stop',
+    title: 'Emergency Stop',
     color: Color.fromARGB(255, 248, 117, 1),
     image: 'assets/images/stop.png',
   ),

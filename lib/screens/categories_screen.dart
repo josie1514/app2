@@ -20,7 +20,7 @@ class CategoriesScreen extends StatelessWidget {
               child: Text(
                 'Welcome!\nHow can we help you today?',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 25, 
                   fontWeight: FontWeight.bold,
                 ),
               ),
