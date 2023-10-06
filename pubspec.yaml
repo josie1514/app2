@@ -79,10 +79,10 @@ flutter:
   # example:
   assets:
     - assets/images/logo.png
-    # - assets/images/arm.png
-    # - assets/images/faq.png
-    # - assets/images/stop.png
-    # - assets/images/video.png
+    - assets/images/arm.png
+    - assets/images/faq.png
+    - assets/images/stop.png
+    - assets/images/video.png
   fonts:
     - family: Raleway
       fonts:
