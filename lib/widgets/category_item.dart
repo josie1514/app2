@@ -7,8 +7,9 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final Color color;
   final String id;
+  final String image;
 
-  const CategoryItem(this.id, this.title, this.color, {super.key});
+  const CategoryItem(this.id, this.title, this.color, this.image, {super.key});
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryMealScreen.routName,
@@ -25,9 +26,24 @@ class CategoryItem extends StatelessWidget {
           color: color, // Set the background color to 'color'
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.titleLarge,
+        child: Column(
+          children: [
+            Container(
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+            Container(
+              //created this container to include images inside our buttons
+              child: Image.asset(
+                image, // Replace with your image path
+                width: 100, // Adjust the width as needed
+                height: 100, // Adjust the height as needed
+                fit: BoxFit.contain, // Adjust the fit as needed
+              ),
+            )
+          ],
         ),
       ),
     );

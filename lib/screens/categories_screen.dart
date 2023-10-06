@@ -9,6 +9,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Stack( // Wrap the Column with a Stack
       children: [
         Column(
@@ -35,7 +36,7 @@ class CategoriesScreen extends StatelessWidget {
                 ),
                 children: dummyCategories
                     .map(
-                      (catData) => CategoryItem(catData.id, catData.title, catData.color),
+                      (catData) => CategoryItem(catData.id, catData.title, catData.color, catData.image),
                     )
                     .toList(),
               ),
