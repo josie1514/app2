@@ -5,7 +5,8 @@ import 'models/meal.dart';
 
 
 const dummyCategories = [
-  //Josie edited names & colors 
+  //Josie edited names & colors
+  //added images 
 
   Category(
     id: 'c1',
