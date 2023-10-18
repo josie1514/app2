@@ -45,7 +45,7 @@ class MealDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 250,
               width: double.infinity,
               child: Image.network(
@@ -75,7 +75,7 @@ class MealDetailScreen extends StatelessWidget {
                   return Column(children: [
                     ListTile(
                       leading: CircleAvatar(
-                        backgroundColor: Theme.of(context).backgroundColor,
+                        backgroundColor: Theme.of(context).colorScheme.background,
                         child: Text(
                           '# ${index + 1}',
                           style: const TextStyle(color: Colors.black),

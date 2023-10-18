@@ -6,11 +6,8 @@ import 'package:meal_app/screens/filters_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
 
-
-
-
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -28,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     'vegetarian': false,
   };
   List<Meal> _availableMeals = DUMMY_MEALS;
-  List<Meal> _favoriteMeals = [];
+  final List<Meal> _favoriteMeals = [];
   void _setFilters(Map<String, bool> filterData) {
     _filters = filterData;
 
@@ -78,12 +75,12 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
                 fontFamily: 'Raleway',
-                fontSize: 20,
+                fontSize: 25,  //font size for "Categories"
                 fontWeight: FontWeight.bold)),
         colorScheme: ColorScheme.fromSwatch(
           //changed colors
-          primarySwatch: Colors.blueGrey,
-          accentColor: Colors.white,
+          primarySwatch: Colors.blueGrey, //color of app bar  background
+          accentColor: Colors.white, //color of app bar text
         ),
         
        //Sara changed Categories background color
@@ -95,7 +92,7 @@ class _MyAppState extends State<MyApp> {
               bodySmall: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
               titleLarge: const TextStyle(
                 fontFamily: 'RobotoCondensed',
-                fontSize: 20,
+                fontSize: 21, //font size for buttons title
                 fontWeight: FontWeight.bold,
               ),
               titleMedium: const TextStyle(
@@ -127,6 +124,7 @@ class _MyAppState extends State<MyApp> {
         MaterialPageRoute(
           builder: ((context) => TabsScreen(_favoriteMeals)),
         );
+        return null;
       },
     );
   }

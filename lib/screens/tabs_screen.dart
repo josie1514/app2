@@ -24,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-      {'page': CategoriesScreen(), 'title': 'Categories'},
+      {'page': const CategoriesScreen(), 'title': 'Categories'},
       {'page': FavoriteScreen(widget.favoriteMeals), 'title': 'Your Favorites'},
     ];
     super.initState();
@@ -36,7 +36,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_pages![_selectedPageIndex]['title']),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: _pages![_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Theme.of(context).colorScheme.primary,
