@@ -79,8 +79,8 @@ class _MyAppState extends State<MyApp> {
                 fontWeight: FontWeight.bold)),
         colorScheme: ColorScheme.fromSwatch(
           //changed colors
-          primarySwatch: Colors.blueGrey,
-          accentColor: Colors.white,
+          primarySwatch: Colors.blueGrey, //color of app bar  background
+          accentColor: Colors.white, //color of app bar text
         ),
         
        //Sara changed Categories background color
