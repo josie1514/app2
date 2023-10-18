@@ -70,8 +70,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 child: ListView(
               children: [
                 _buildSwitchListTile(
-                  'Gluten-Free',
-                  'Only include Gluten-free meals',
+                  'Name',
+                  'Users prefered name or alias during app use',
                   _glutenFree,
                   ((newValue) {
                     setState(() {
@@ -80,8 +80,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   }),
                 ),
                 _buildSwitchListTile(
-                  'Lactose-Free',
-                  'Only include Lactose-free meals',
+                  'Date of Birth',
+                  'User D.O.B used for user stat research',
                   _lactoseFree,
                   ((newValue) {
                     setState(() {
@@ -90,8 +90,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   }),
                 ),
                 _buildSwitchListTile(
-                  'Vegeterian',
-                  'Only include Vegetarian meals',
+                  'Sitting Height',
+                  'User Height while sitting (in FT)',
                   _vegetarian,
                   ((newValue) {
                     setState(() {
@@ -100,8 +100,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   }),
                 ),
                 _buildSwitchListTile(
-                  'Vegan',
-                  'Only include Vegan meals',
+                  'Connect to OMAR',
+                  'Connect to your OMAR Device',
                   _vegan,
                   ((newValue) {
                     setState(() {

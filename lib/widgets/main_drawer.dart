@@ -34,11 +34,11 @@ class MainDrawer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             color: Colors.blueGrey,
             child: const Text(
-              "OMAR",
+              "The OMAR",
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
-                color: Color.fromARGB(255, 0, 0, 0)
+                color: Color.fromARGB(179, 29, 41, 202)
               ),
             ),
           ),
@@ -46,14 +46,14 @@ class MainDrawer extends StatelessWidget {
             height: 20,
           ),
           buildListTile(
-            'Meals',
-            Icons.restaurant,
+            'FAQ',
+            Icons.question_mark_rounded,
             () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           buildListTile(
-            'Filters',
+            'Settings',
             Icons.settings,
             () {
               Navigator.of(context)
