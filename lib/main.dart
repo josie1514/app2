@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/dummy_data.dart';
 import 'package:meal_app/models/meal.dart';
 import 'package:meal_app/screens/category_meals_screen.dart';
+import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
@@ -10,7 +11,7 @@ import './screens/tabs_screen.dart';
 
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     'Connect OMAR': false,
   };
   List<Meal> _availableMeals = DUMMY_MEALS;
-  List<Meal> _favoriteMeals = [];
+  final List<Meal> _favoriteMeals = [];
   void _setSettings(Map<String, Object> filterData) {
     _settings = filterData;
 
@@ -112,9 +113,9 @@ class _MyAppState extends State<MyApp> {
       ),
       title: "IkiMeal",
       //home: CategoriesScreen(),
-      initialRoute: '/', //default is '/'
+      initialRoute: '/Home', //default is '/'
       routes: {
-        '/': (context) => TabsScreen(_favoriteMeals),
+        '/Home': (context) => TabsScreen(_favoriteMeals),
         // '/category-meals': (context) => CategoryMealScreen(),
         CategoryMealScreen.routName: (context) =>
             CategoryMealScreen(_availableMeals),
@@ -122,6 +123,8 @@ class _MyAppState extends State<MyApp> {
             MealDetailScreen(_toggleFavorite, _isMealFavorite),
         SettingsScreen.routName: (context) =>
             SettingsScreen(_settings, _setSettings),
+        FaqScreen.routName: (context) => 
+            const FaqScreen(),
       },
       onUnknownRoute: (settings) {
         MaterialPageRoute(
