@@ -3,7 +3,9 @@ import 'package:meal_app/dummy_data.dart';
 import 'package:meal_app/models/category.dart';
 import 'package:meal_app/models/meal.dart';
 import 'package:meal_app/screens/category_meals_screen.dart';
+import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
+
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, VoidCallback tapHandler) {
@@ -53,7 +55,7 @@ class MainDrawer extends StatelessWidget {
             'Home',
             Icons.home_filled,
             () {
-              Navigator.of(context).pushReplacementNamed('/');
+              Navigator.of(context).pushReplacementNamed('/Home');
             },
           ),
           buildListTile(
@@ -67,7 +69,7 @@ class MainDrawer extends StatelessWidget {
             'FAQ', 
             Icons.question_mark_rounded,
             () {
-              Navigator.of(context).pushReplacementNamed('/');
+              Navigator.of(context).pushReplacementNamed(FaqScreen.routName);
            },
           ),
         ],
