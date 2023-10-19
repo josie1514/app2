@@ -129,7 +129,6 @@ class _MyAppState extends State<MyApp> {
           builder: ((context) => TabsScreen(_favoriteMeals)),
         );
         return null;
-        return null;
       },
     );
   }
