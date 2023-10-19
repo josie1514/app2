@@ -16,7 +16,6 @@ class _CategoryMealScreenState extends State<CategoryMealScreen> {
   List<Meal>? displayedMeals;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -35,11 +34,11 @@ class _CategoryMealScreenState extends State<CategoryMealScreen> {
     super.didChangeDependencies();
   }
 
-  void _removeMeal(String mealID) {
+  /*void _removeMeal(String mealID) {
     setState(() {
       displayedMeals!.removeWhere((meal) => meal.id == mealID);
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
