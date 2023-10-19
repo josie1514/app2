@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/widgets/main_drawer.dart';
 
 class SettingsScreen extends StatefulWidget {
-  final Map<String, bool> currenSetting;
-  final Function(Map<String, bool>) saveSettings;
   const SettingsScreen(this.currenSetting, this.saveSettings, {super.key});
+  final Map<String, Object> currenSetting;
+  final Function(Map<String, Object>) saveSettings;
+  
   static const routName = '/settings';
 
   @override
@@ -13,30 +14,59 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool _name = false;
-  bool _DateOfBirth = false;
-  bool _sitHeight = false;
-  bool _ConnectOmar = false;
+  String _name = '';
+  int _dateOfBirth = 0;
+  int _sitHeight = 0;
+  bool _connectOmar = false;
+  
   @override
   void initState() {
-    _name = widget.currenSetting['name']!;
-    _DateOfBirth = widget.currenSetting['Date of Birth']!;
-    _sitHeight = widget.currenSetting['Sit Height']!;
-    _ConnectOmar = widget.currenSetting['Connect OMAR']!;
+    _name = '';
+    _dateOfBirth = 0;
+    _sitHeight = 0;
+    _connectOmar = false;
     super.initState();
   }
 
   Widget _buildSwitchListTile(
     String title,
     String description,
-    bool currentValue,
+    bool currenState,
     Function(bool) updateValue,
   ) {
     return SwitchListTile(
       title: Text(title),
       subtitle: Text(description),
-      value: currentValue,
+      value: currenState,
       onChanged: updateValue,
+    );
+  }
+
+  Widget _buildListTile(
+    String title,
+    String description,
+    String currentValue,
+    Function(String) updateValue,
+  ) {
+    return ListTile(
+      title: Text(title),
+      subtitle: Text(description),
+      trailing: Text(currentValue),
+      onTap: () {},
+    );
+  }
+
+  Widget _buildIntListTile(
+    String title,
+    String description,
+    int currentValue,
+    Function(int) updateValue,
+  ) {
+    return ListTile(
+      title: Text(title),
+      subtitle: Text(description),
+      trailing: Text(currentValue.toString()),
+      onTap: () {},
     );
   }
 
@@ -52,9 +82,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               onPressed: (() {
                 final selectedSettings = {
                   'Name': _name,
-                  'Date of Birth': _DateOfBirth,
+                  'Date of Birth': _dateOfBirth,
                   'Sit Height': _sitHeight,
-                  'Connect OMAR': _ConnectOmar,
+                  'Connect OMAR': _connectOmar,
                 };
                 widget.saveSettings(selectedSettings);
               }),
@@ -63,34 +93,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ],
         ),
-        drawer: MainDrawer(),
+        drawer: const MainDrawer(),
         body: Column(
           children: [
             Container(),
             Expanded(
                 child: ListView(
               children: [
-                _buildSwitchListTile(
+                _buildListTile(
                   'Name',
                   'Users prefered name or alias during app use',
                   _name,
                   ((newValue) {
                     setState(() {
-                      _name = newValue;
+                      _name = '';
                     });
                   }),
                 ),
-                _buildSwitchListTile(
+                _buildIntListTile(
                   'Date of Birth',
                   'User D.O.B used for user stat research',
-                  _DateOfBirth,
+                  _dateOfBirth,
                   ((newValue) {
                     setState(() {
-                      _DateOfBirth = newValue;
+                      _dateOfBirth = newValue;
                     });
                   }),
                 ),
-                _buildSwitchListTile(
+                _buildIntListTile(
                   'Sitting Height',
                   'User Height while sitting (in FT)',
                   _sitHeight,
@@ -103,10 +133,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 _buildSwitchListTile(
                   'Connect to OMAR',
                   'Connect to your OMAR Device',
-                  _ConnectOmar,
+                  _connectOmar,
                   ((newValue) {
                     setState(() {
-                      _ConnectOmar = newValue;
+                      _connectOmar = newValue;
                     });
                   }),
                 ),

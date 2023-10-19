@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, bool> _settings = {
+  Map<String, Object> _settings = {
     'name': false,
     'Date of Birth': false,
     'Sit Height': false,
@@ -29,11 +29,11 @@ class _MyAppState extends State<MyApp> {
   };
   List<Meal> _availableMeals = DUMMY_MEALS;
   List<Meal> _favoriteMeals = [];
-  void _setSettings(Map<String, bool> filterData) {
+  void _setSettings(Map<String, Object> filterData) {
     _settings = filterData;
 
     _availableMeals = DUMMY_MEALS.where((meal) {
-      if (_settings['Name']! && !meal.isGlutenFree) {
+      /*if (_settings['Name']! && !meal.isGlutenFree) {
         return false;
       }
       if (_settings['Date of Birth']! && !meal.isLactoseFree) {
@@ -44,9 +44,9 @@ class _MyAppState extends State<MyApp> {
       }
       if (_settings['Connect OMAR']! && !meal.isVegetarian) {
         return false;
-      }
+      }*/
       return true;
-    }).toList();
+      }).toList();
   }
 
   void _toggleFavorite(String mealId) {
