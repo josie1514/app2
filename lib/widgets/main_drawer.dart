@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/dummy_data.dart';
-import 'package:meal_app/models/category.dart';
-import 'package:meal_app/models/meal.dart';
-import 'package:meal_app/screens/category_meals_screen.dart';
 import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
 
