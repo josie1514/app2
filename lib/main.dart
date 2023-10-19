@@ -126,10 +126,11 @@ class _MyAppState extends State<MyApp> {
         FaqScreen.routName: (context) => 
             const FaqScreen(),
       },
-      onUnknownRoute: (settings) {
+       onUnknownRoute: (void settings) {
         MaterialPageRoute(
           builder: ((context) => TabsScreen(_favoriteMeals)),
         );
+        return null;
       },
     );
   }
