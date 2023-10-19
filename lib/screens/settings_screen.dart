@@ -1,27 +1,28 @@
+import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:meal_app/widgets/main_drawer.dart';
 
-class FiltersScreen extends StatefulWidget {
-  final Map<String, bool> currenFilters;
-  final Function(Map<String, bool>) saveFilters;
-  const FiltersScreen(this.currenFilters, this.saveFilters, {super.key});
-  static const routName = '/filters';
+class SettingsScreen extends StatefulWidget {
+  final Map<String, bool> currenSetting;
+  final Function(Map<String, bool>) saveSettings;
+  const SettingsScreen(this.currenSetting, this.saveSettings, {super.key});
+  static const routName = '/settings';
 
   @override
-  State<FiltersScreen> createState() => _FiltersScreenState();
+  State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _FiltersScreenState extends State<FiltersScreen> {
-  bool _glutenFree = false;
-  bool _vegetarian = false;
-  bool _vegan = false;
-  bool _lactoseFree = false;
+class _SettingsScreenState extends State<SettingsScreen> {
+  bool _name = false;
+  bool _DateOfBirth = false;
+  bool _sitHeight = false;
+  bool _ConnectOmar = false;
   @override
   void initState() {
-    _glutenFree = widget.currenFilters['gluten']!;
-    _lactoseFree = widget.currenFilters['lactose']!;
-    _vegan = widget.currenFilters['vegan']!;
-    _vegetarian = widget.currenFilters['vegetarian']!;
+    _name = widget.currenSetting['name']!;
+    _DateOfBirth = widget.currenSetting['Date of Birth']!;
+    _sitHeight = widget.currenSetting['Sit Height']!;
+    _ConnectOmar = widget.currenSetting['Connect OMAR']!;
     super.initState();
   }
 
@@ -44,20 +45,20 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Your Filters",
+            "Settings",
           ),
           actions: [
             IconButton(
               onPressed: (() {
-                final selectedFilters = {
-                  'gluten': _glutenFree,
-                  'lactose': _lactoseFree,
-                  'vegan': _vegan,
-                  'vegetarian': _vegetarian,
+                final selectedSettings = {
+                  'Name': _name,
+                  'Date of Birth': _DateOfBirth,
+                  'Sit Height': _sitHeight,
+                  'Connect OMAR': _ConnectOmar,
                 };
-                widget.saveFilters(selectedFilters);
+                widget.saveSettings(selectedSettings);
               }),
-              icon: const Icon(Icons.save),
+              icon: const Icon(Icons.save_rounded),
               tooltip: "Save",
             ),
           ],
@@ -72,40 +73,40 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 _buildSwitchListTile(
                   'Name',
                   'Users prefered name or alias during app use',
-                  _glutenFree,
+                  _name,
                   ((newValue) {
                     setState(() {
-                      _glutenFree = newValue;
+                      _name = newValue;
                     });
                   }),
                 ),
                 _buildSwitchListTile(
                   'Date of Birth',
                   'User D.O.B used for user stat research',
-                  _lactoseFree,
+                  _DateOfBirth,
                   ((newValue) {
                     setState(() {
-                      _lactoseFree = newValue;
+                      _DateOfBirth = newValue;
                     });
                   }),
                 ),
                 _buildSwitchListTile(
                   'Sitting Height',
                   'User Height while sitting (in FT)',
-                  _vegetarian,
+                  _sitHeight,
                   ((newValue) {
                     setState(() {
-                      _vegetarian = newValue;
+                     _sitHeight = newValue;
                     });
                   }),
                 ),
                 _buildSwitchListTile(
                   'Connect to OMAR',
                   'Connect to your OMAR Device',
-                  _vegan,
+                  _ConnectOmar,
                   ((newValue) {
                     setState(() {
-                      _vegan = newValue;
+                      _ConnectOmar = newValue;
                     });
                   }),
                 ),

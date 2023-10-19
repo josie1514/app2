@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/screens/filters_screen.dart';
+import 'package:meal_app/dummy_data.dart';
+import 'package:meal_app/models/category.dart';
+import 'package:meal_app/models/meal.dart';
+import 'package:meal_app/screens/category_meals_screen.dart';
+import 'package:meal_app/screens/settings_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, VoidCallback tapHandler) {
@@ -46,8 +50,8 @@ class MainDrawer extends StatelessWidget {
             height: 20,
           ),
           buildListTile(
-            'FAQ',
-            Icons.question_mark_rounded,
+            'Home',
+            Icons.home_filled,
             () {
               Navigator.of(context).pushReplacementNamed('/');
             },
@@ -56,9 +60,15 @@ class MainDrawer extends StatelessWidget {
             'Settings',
             Icons.settings,
             () {
-              Navigator.of(context)
-                  .pushReplacementNamed(FiltersScreen.routName);
+              Navigator.of(context).pushReplacementNamed(SettingsScreen.routName);
             },
+          ),
+          buildListTile(
+            'FAQ', 
+            Icons.question_mark_rounded,
+            () {
+              Navigator.of(context).pushReplacementNamed('/');
+           },
           ),
         ],
       ),
