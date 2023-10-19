@@ -24,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-      {'page': CategoriesScreen(), 'title': 'Categories'},
+      {'page': const CategoriesScreen(), 'title': 'Home'},
       {'page': FavoriteScreen(widget.favoriteMeals), 'title': 'Your Favorites'},
     ];
     super.initState();
@@ -47,8 +47,8 @@ class _TabsScreenState extends State<TabsScreen> {
           items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.category),
-                tooltip: 'Categories',
-                label: 'Categories'),
+                tooltip: 'Home',
+                label: 'Home'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.star),
                 tooltip: 'Favorites',
