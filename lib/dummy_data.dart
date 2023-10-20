@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
 import './models/category.dart';
 import 'models/meal.dart';
 
+const routName = '/Home';
 
 const dummyCategories = [
   //Josie edited names & colors

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/screens/filters_screen.dart';
+import 'package:meal_app/screens/faq_screen.dart';
+import 'package:meal_app/screens/settings_screen.dart';
+
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, VoidCallback tapHandler) {
@@ -34,11 +36,11 @@ class MainDrawer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             color: Colors.blueGrey,
             child: const Text(
-              "OMAR",
+              "The OMAR",
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
-                color: Color.fromARGB(255, 0, 0, 0)
+                color: Color.fromARGB(179, 29, 41, 202)
               ),
             ),
           ),
@@ -46,19 +48,25 @@ class MainDrawer extends StatelessWidget {
             height: 20,
           ),
           buildListTile(
-            'Meals',
-            Icons.restaurant,
+            'Home',
+            Icons.home_filled,
             () {
-              Navigator.of(context).pushReplacementNamed('/');
+              Navigator.of(context).pushReplacementNamed('/Home');
             },
           ),
           buildListTile(
-            'Filters',
+            'Settings',
             Icons.settings,
             () {
-              Navigator.of(context)
-                  .pushReplacementNamed(FiltersScreen.routName);
+              Navigator.of(context).pushReplacementNamed(SettingsScreen.routName);
             },
+          ),
+          buildListTile(
+            'FAQ', 
+            Icons.question_mark_rounded,
+            () {
+              Navigator.of(context).pushReplacementNamed(FaqScreen.routName);
+           },
           ),
         ],
       ),

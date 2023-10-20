@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/dummy_data.dart';
 import 'package:meal_app/models/meal.dart';
 import 'package:meal_app/screens/category_meals_screen.dart';
-import 'package:meal_app/screens/filters_screen.dart';
+import 'package:meal_app/screens/faq_screen.dart';
+import 'package:meal_app/screens/settings_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
-import './screens/tabs_screen.dart';
+import 'screens/home_screen.dart';
 
 void main(List<String> args) {
+  runApp(const MyApp());
   runApp(const MyApp());
 }
 
@@ -18,32 +20,32 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, bool> _filters = {
-    'gluten': false,
-    'lactose': false,
-    'vegan': false,
-    'vegetarian': false,
+  Map<String, Object> _settings = {
+    'name': false,
+    'Date of Birth': false,
+    'Sit Height': false,
+    'Connect OMAR': false,
   };
   List<Meal> _availableMeals = DUMMY_MEALS;
   final List<Meal> _favoriteMeals = [];
-  void _setFilters(Map<String, bool> filterData) {
-    _filters = filterData;
+  void _setSettings(Map<String, Object> filterData) {
+    _settings = filterData;
 
     _availableMeals = DUMMY_MEALS.where((meal) {
-      if (_filters['gluten']! && !meal.isGlutenFree) {
+      /*if (_settings['Name']! && !meal.isGlutenFree) {
         return false;
       }
-      if (_filters['lactose']! && !meal.isLactoseFree) {
+      if (_settings['Date of Birth']! && !meal.isLactoseFree) {
         return false;
       }
-      if (_filters['vegan']! && !meal.isVegan) {
+      if (_settings['Sit Height']! && !meal.isVegan) {
         return false;
       }
-      if (_filters['vegetarian']! && !meal.isVegetarian) {
+      if (_settings['Connect OMAR']! && !meal.isVegetarian) {
         return false;
-      }
+      }*/
       return true;
-    }).toList();
+      }).toList();
   }
 
   void _toggleFavorite(String mealId) {
@@ -109,18 +111,20 @@ class _MyAppState extends State<MyApp> {
       ),
       title: "IkiMeal",
       //home: CategoriesScreen(),
-      initialRoute: '/', //default is '/'
+      initialRoute: '/Home', //default is '/'
       routes: {
-        '/': (context) => TabsScreen(_favoriteMeals),
+        '/Home': (context) => TabsScreen(_favoriteMeals),
         // '/category-meals': (context) => CategoryMealScreen(),
         CategoryMealScreen.routName: (context) =>
             CategoryMealScreen(_availableMeals),
         MealDetailScreen.routName: (context) =>
             MealDetailScreen(_toggleFavorite, _isMealFavorite),
-        FiltersScreen.routName: (context) =>
-            FiltersScreen(_filters, _setFilters),
+        SettingsScreen.routName: (context) =>
+            SettingsScreen(_settings, _setSettings),
+        FaqScreen.routName: (context) => 
+            const FaqScreen(),
       },
-      onUnknownRoute: (settings) {
+       onUnknownRoute: (void settings) {
         MaterialPageRoute(
           builder: ((context) => TabsScreen(_favoriteMeals)),
         );
