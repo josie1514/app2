@@ -5,7 +5,7 @@ import 'package:meal_app/screens/category_meals_screen.dart';
 import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
-import './screens/tabs_screen.dart';
+import 'screens/home_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
