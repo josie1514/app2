@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
+import 'package:meal_app/screens/about_screen.dart';
 
 
 class MainDrawer extends StatelessWidget {
@@ -55,10 +56,10 @@ class MainDrawer extends StatelessWidget {
             },
           ),
           buildListTile(
-            'Settings',
-            Icons.settings,
+            'About Us',
+            Icons.info,
             () {
-              Navigator.of(context).pushReplacementNamed(SettingsScreen.routName);
+              Navigator.of(context).pushReplacementNamed(AboutScreen.routName);
             },
           ),
           buildListTile(
@@ -67,6 +68,16 @@ class MainDrawer extends StatelessWidget {
             () {
               Navigator.of(context).pushReplacementNamed(FaqScreen.routName);
            },
+          ),
+          const SizedBox.square(
+            dimension: 415,
+          ),
+          buildListTile(
+            'Settings',
+            Icons.settings,
+            () {
+              Navigator.of(context).pushReplacementNamed(SettingsScreen.routName);
+            },
           ),
         ],
       ),
