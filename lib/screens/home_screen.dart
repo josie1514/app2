@@ -1,41 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/models/meal.dart';
-import 'package:meal_app/screens/home_navigation.dart';
-import 'package:meal_app/widgets/main_drawer.dart';
+import 'package:meal_app/dummy_data.dart';
+import '../widgets/category_item.dart';
 
-class TabsScreen extends StatefulWidget {
-  final List<Meal> favoriteMeals;
-  const TabsScreen(this.favoriteMeals, {super.key});
+//Sara and Josie created a text box and image box to upload our logo to 
 
-  @override
-  State<TabsScreen> createState() => _TabsScreenState();
-}
-
-class _TabsScreenState extends State<TabsScreen> {
-  List<Map<String, dynamic>>? _pages;
-  int _selectedPageIndex = 0;
-  void _selectPage(int index) {
-    setState(() {
-      _selectedPageIndex = index;
-    });
-  }
-
-  @override
-  void initState() {
-    _pages = [
-      {'page': const CategoriesScreen(), 'title': 'Home'},
-    ];
-    super.initState();
-  }
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_pages![_selectedPageIndex]['title']),
-      ),
-      drawer: const MainDrawer(),
-      body: _pages![_selectedPageIndex]['page'],
+    
+    return Stack( // Wrap the Column with a Stack
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Text(
+                'Welcome!\nHow can we help you today?',
+                style: TextStyle(
+                  fontSize: 25, 
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Expanded(
+              child: GridView(
+                padding: const EdgeInsets.all(15),
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 200,
+                  childAspectRatio: 1 / 1,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
+                ),
+                children: dummyCategories
+                    .map(
+                      (catData) => CategoryItem(catData.id, catData.title, catData.color, catData.image),
+                    )
+                    .toList(),
+              ),
+            ),
+          ],
+        ),
+        Align(
+          alignment: Alignment.bottomCenter, // Position the image at the bottom
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset(
+              'assets/images/logo.png', // Replace with your image path
+              width: 250, // Adjust the width as needed
+              height: 150, // Adjust the height as needed
+              fit: BoxFit.contain, // Adjust the fit as needed
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
