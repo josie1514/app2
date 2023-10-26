@@ -16,6 +16,28 @@ class AboutScreen extends StatelessWidget{
       ),
     ),
     drawer: const MainDrawer(),
+    body: ListView(
+      children:const[
+        ExpansionTile(
+          title: Text('What is The Optimized Meal Assistance Robot (OMAR)?'),
+          children: [
+            Text('OMAR is a robot that can assist you...'),
+          ],
+        ),
+        ExpansionTile(
+          title: Text('Who is the Assistive Robotics Team?'),
+          children: [
+            Text('The Assistive Robotics Team...'),
+          ],
+        ),
+        ExpansionTile(
+          title: Text('Why is it called "OMAR"?'),
+          children: [
+            Text('OMAR is...'),
+          ],
+        ),
+      ],
+      ),
     );
   }
 }
