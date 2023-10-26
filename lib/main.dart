@@ -5,6 +5,7 @@ import 'package:meal_app/screens/category_meals_screen.dart';
 import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
+import 'package:meal_app/screens/about_screen.dart';
 import 'screens/home_screen.dart';
 
 void main(List<String> args) {
@@ -123,6 +124,8 @@ class _MyAppState extends State<MyApp> {
             SettingsScreen(_settings, _setSettings),
         FaqScreen.routName: (context) => 
             const FaqScreen(),
+        AboutScreen.routName: (context) => 
+            const AboutScreen(),
       },
        onUnknownRoute: (void settings) {
         MaterialPageRoute(
