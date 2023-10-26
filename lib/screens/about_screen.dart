@@ -21,7 +21,7 @@ class AboutScreen extends StatelessWidget{
         ExpansionTile(
           title: Text('What is The Optimized Meal Assistance Robot (OMAR)?'),
           children: [
-            Text('OMAR is a robot that can assist you...'),
+            Text('The Optimized Meal Assistance Robot (OMAR) is an assistive robotic arm that empowers physically impaired individuals to independently feed themselves, reducing the workload on caregivers. This innovative technology incorporates facial tracking software, customized utensils, and a mobile application for enhanced functionality.'),
           ],
         ),
         ExpansionTile(
