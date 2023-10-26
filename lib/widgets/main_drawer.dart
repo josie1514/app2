@@ -40,7 +40,7 @@ class MainDrawer extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
-                color: Color.fromARGB(179, 29, 41, 202)
+                color: Color.fromARGB(255, 255, 255, 255)
               ),
             ),
           ),
