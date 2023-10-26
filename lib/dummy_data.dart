@@ -20,12 +20,12 @@ const dummyCategories = [
     color: Color.fromARGB(255, 248, 117, 1),
     image: 'assets/images/video.png',
   ),
-  Category(
-    id: 'c3',
-    title: 'FAQs',
-    color: Color.fromARGB(255, 248, 117, 1),
-    image: 'assets/images/faq.png',
-  ),
+  // Category(
+  //   id: 'c3',
+  //   title: 'FAQs',
+  //   color: Color.fromARGB(255, 248, 117, 1),
+  //   image: 'assets/images/faq.png',
+  // ),
   Category(
     id: 'c4',
     title: 'Emergency Stop',
