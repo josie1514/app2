@@ -36,18 +36,6 @@ class _TabsScreenState extends State<TabsScreen> {
       ),
       drawer: const MainDrawer(),
       body: _pages![_selectedPageIndex]['page'],
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          unselectedItemColor: Colors.white,
-          selectedItemColor: Theme.of(context).colorScheme.secondary,
-          currentIndex: _selectedPageIndex,
-          onTap: _selectPage,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled),
-                tooltip: 'Home',
-                label: 'Home'),
-          ]),
     );
   }
 }
