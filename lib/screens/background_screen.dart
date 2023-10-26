@@ -53,7 +53,8 @@ class _TabsScreenState extends State<TabsScreen> {
                 icon: Icon(Icons.star),
                 tooltip: 'Favorites',
                 label: 'Favorites'),
-          ]),
+          ]
+          ),
     );
   }
 }
