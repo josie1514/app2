@@ -70,7 +70,7 @@ class MainDrawer extends StatelessWidget {
            },
           ),
           const SizedBox.square(
-            dimension: 415,
+            dimension: 350,
           ),
           buildListTile(
             'Settings',
