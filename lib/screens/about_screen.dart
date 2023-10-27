@@ -27,7 +27,7 @@ class AboutScreen extends StatelessWidget{
         ExpansionTile(
           title: Text('Who is the Assistive Robotics Team?'),
           children: [
-            Text('The Assistive Robotics team is a team of dedicated professionals responsible for creating the Optimized Meal Assistance Robot (OMAR), with a focus on assistive technology for individuals with physical impairments.Our multidisciplinary expertise in robotics, artificial intelligence, and human-computer interaction drives us to pioneer innovative solutions that enhance the quality of life by providing more independent and fulfilling experiences for those with physical challenges.'),
+            Text('The Assistive Robotics team is a team of dedicated professionals responsible for creating the Optimized Meal Assistance Robot (OMAR), with a focus on assistive technology for individuals with physical impairments.\n\nOur multidisciplinary expertise in robotics, artificial intelligence, and human-computer interaction drives us to pioneer innovative solutions that enhance the quality of life by providing more independent and fulfilling experiences for those with physical challenges.'),
           ],
         ),
         ExpansionTile(
