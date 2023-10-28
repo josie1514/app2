@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'screens/background_screen.dart';
 import 'screens/connect_omar.dart';
 import 'models/user_data.dart';
+import 'package:meal_app/screens/user_control_buttons.dart';
 
 void main() {
   runApp(
@@ -110,6 +111,8 @@ class _MyAppState extends State<MyApp> {
             const FaqScreen(),
         AboutScreen.routName: (context) => 
             const AboutScreen(),
+        UserButtons.routName: (context) =>
+            UserButtons(),
       },
        onUnknownRoute: (void settings) {
         MaterialPageRoute(
