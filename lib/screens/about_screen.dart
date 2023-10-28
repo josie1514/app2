@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/widgets/main_drawer.dart';
+import 'package:meal_app/widgets/side_drawer.dart';
 // About screen: includes a project description, a list of the team members, and a logo.
 
 class AboutScreen extends StatelessWidget{

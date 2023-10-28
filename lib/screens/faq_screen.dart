@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/widgets/main_drawer.dart';
+import 'package:meal_app/widgets/side_drawer.dart';
 
 class FaqScreen extends StatelessWidget {
   const FaqScreen({super.key});
