@@ -6,11 +6,18 @@ import 'package:meal_app/screens/faq_screen.dart';
 import 'package:meal_app/screens/settings_screen.dart';
 import 'package:meal_app/screens/meal_detail_screen.dart';
 import 'package:meal_app/screens/about_screen.dart';
+import 'package:provider/provider.dart';
 import 'screens/background_screen.dart';
+import 'screens/connect_omar.dart';
+import 'models/user_data.dart';
 
-void main(List<String> args) {
-  runApp(const MyApp());
-  runApp(const MyApp());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UserSettings(),
+      child: MyApp()
+      ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -21,33 +28,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, Object> _settings = {
-    'name': false,
-    'Date of Birth': false,
-    'Sit Height': false,
-    'Connect OMAR': false,
-  };
   List<Meal> _availableMeals = DUMMY_MEALS;
   final List<Meal> _favoriteMeals = [];
-  void _setSettings(Map<String, Object> filterData) {
-    _settings = filterData;
-
-    _availableMeals = DUMMY_MEALS.where((meal) {
-      /*if (_settings['Name']! && !meal.isGlutenFree) {
-        return false;
-      }
-      if (_settings['Date of Birth']! && !meal.isLactoseFree) {
-        return false;
-      }
-      if (_settings['Sit Height']! && !meal.isVegan) {
-        return false;
-      }
-      if (_settings['Connect OMAR']! && !meal.isVegetarian) {
-        return false;
-      }*/
-      return true;
-      }).toList();
-  }
 
   void _toggleFavorite(String mealId) {
     final existingIndex =
@@ -121,7 +103,9 @@ class _MyAppState extends State<MyApp> {
         MealDetailScreen.routName: (context) =>
             MealDetailScreen(_toggleFavorite, _isMealFavorite),
         SettingsScreen.routName: (context) =>
-            SettingsScreen(_settings, _setSettings),
+            SettingsScreen(),
+        ConnectOmar.routName: (context) => 
+            ConnectOmar(),
         FaqScreen.routName: (context) => 
             const FaqScreen(),
         AboutScreen.routName: (context) => 
