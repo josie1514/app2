@@ -19,7 +19,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     double feet = 5.0; // Store the selected feet
     double inches = 0.0; // Store the selected inches
 
-    @override
+  @override
     void initState() {
       super.initState();
       final UserSettings = Provider.of<UserSettings>(context, listen: true);
@@ -34,6 +34,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
       return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Settings'),
           actions: [
             IconButton(
